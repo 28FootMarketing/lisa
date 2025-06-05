@@ -1,25 +1,57 @@
 import streamlit as st
 
-# Title and subtitle
-st.set_page_config(page_title="Agent Lisa – Parent Retention Support", layout="centered")
-st.title("👩🏽‍💼 Meet Lisa – Parent Communication & Retention Agent")
-st.subheader("Guiding Parents Through the Recruiting Process with Care and Clarity")
+st.set_page_config(page_title="Lisa Bot - Parent Connector", page_icon="🤝", layout="centered")
 
-# Intro
-st.markdown("Lisa is your trusted advisor, helping parents stay informed, supported, and ready to advocate for their student-athletes every step of the way.")
+st.title("🤝 Lisa Bot: The Connector")
+st.subheader("Parent Communication & Retention")
 
-# Lisa's style and quote
-st.image("https://example.com/lisa-avatar.png", caption="Agent Lisa: Calm. Compassionate. Clear.", use_column_width=True)
-st.markdown("> “Every parent needs a playbook too. I make sure they do not feel left behind.”")
+st.markdown("**Style of Play:** Smart, communicative, and relationship-driven")
 
-# FAQ Simulation
-with st.expander("📝 Common Parent Questions I Help Answer"):
-    st.markdown("- How do I know if a coach is really interested?")
-    st.markdown("- What should I be doing during junior year?")
-    st.markdown("- When should I step in—or step back?")
-    st.markdown("- What are red flags with offers?")
-    st.markdown("- How can I keep my athlete motivated?")
+st.markdown("""
+Lisa bridges the gap between parents and the recruiting process.  
+She answers common concerns, helps clarify next steps, and ensures families stay engaged.
 
-# CTA
-st.success("📅 Want personalized updates for your role in the process? Click below.")
-st.button("Join the Parent Support List")
+> “Lisa brings calm to the chaos, translating the recruiting grind into confident, informed decisions.”
+""")
+
+st.header("Step 1: Who Are You Supporting?")
+relation = st.selectbox("Select your role:", ["Parent", "Guardian", "Mentor", "Relative"])
+athlete_grade = st.selectbox("Student-Athlete's Current Grade:", ["9th", "10th", "11th", "12th", "Gap Year"])
+sport = st.text_input("Sport Played by Student-Athlete:")
+
+st.header("Step 2: Top Questions on Your Mind")
+concerns = st.multiselect("What are your biggest questions right now?", [
+    "How do I help my child get recruited?",
+    "What should we be doing each year of high school?",
+    "How do we contact coaches?",
+    "What should go in a recruiting video?",
+    "How do I stay involved without overstepping?",
+    "How do I keep my child motivated?",
+    "How much does this process usually cost?",
+    "What if my child is not a starter?",
+    "What role do grades and test scores play?"
+])
+
+st.header("Step 3: Support Options")
+interest = st.radio("Would you like:", [
+    "Personalized roadmap for your family",
+    "Weekly updates on what to do next",
+    "Answers to my specific questions",
+    "Help staying organized throughout this process"
+])
+
+contact_method = st.selectbox("Preferred method of communication:", ["Email", "Text Message", "Both"])
+contact_info = st.text_input("Your Contact Info:")
+
+if st.button("Get Lisa’s Guidance"):
+    st.success("✅ Lisa has prepared personalized guidance for your family.")
+    st.markdown(f"""
+    **Role:** {relation}  
+    **Athlete Grade:** {athlete_grade}  
+    **Sport:** {sport}  
+    **Top Concerns:** {', '.join(concerns)}  
+    **Support Interest:** {interest}  
+    **Contact:** via {contact_method} → {contact_info}
+    """)
+    st.info("Lisa says: We do this together. One step, one decision, one opportunity at a time.")
+    st.balloons()
