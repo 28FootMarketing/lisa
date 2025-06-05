@@ -1,8 +1,8 @@
 import streamlit as st
 
-st.set_page_config(page_title="Lisa Bot - Parent Connector", page_icon="🤝", layout="centered")
+st.set_page_config(page_title="Lisa - Parent Connector", page_icon="🤝", layout="centered")
 
-st.title("🤝 Lisa Bot: The Connector")
+st.title("🤝 Lisa: The Connector")
 st.subheader("Parent Communication & Retention")
 
 st.markdown("**Style of Play:** Smart, communicative, and relationship-driven")
